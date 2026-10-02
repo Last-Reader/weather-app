@@ -1,0 +1,35 @@
+import type { WeatherType } from '@myTypes/types';
+
+export const weatherMock: WeatherType = {
+  country: 'Greece',
+  city: 'Athens',
+  date: 'Thursday, 31 Aug',
+  time: '09:03',
+  icon: 'sun',
+  description: 'Sunny',
+  temperature: 24,
+  feelsLike: 22,
+  maxTemperature: 27,
+  minTemperature: 18,
+  humidity: 41,
+  windSpeed: 2,
+  windDirection: 180,
+  sunRise: '06:37 AM',
+  sunSet: '08:37 PM',
+  pressure: 997,
+  uv: 8,
+  hourly: [
+    { time: '12:00', temperature: 26, icon: 'sun', windSpeed: 3 },
+    { time: '15:00', temperature: 27, icon: 'sun', windSpeed: 2 },
+    { time: '18:00', temperature: 27, icon: 'cloudy', windSpeed: 2 },
+    { time: '21:00', temperature: 25, icon: 'cloudy', windSpeed: 1 },
+    { time: '00:00', temperature: 22, icon: 'cloudy', windSpeed: 3 },
+  ],
+  daily: [
+    { dayName: 'Friday', date: '1 Sep', temperature: 20, icon: 'sun' },
+    { dayName: 'Saturday', date: '2 Sep', temperature: 22, icon: 'cloudy' },
+    { dayName: 'Sunday', date: '3 Sep', temperature: 27, icon: 'rain' },
+    { dayName: 'Monday', date: '4 Sep', temperature: 18, icon: 'rain' },
+    { dayName: 'Tuesday', date: '5 Sep', temperature: 16, icon: 'rain' },
+  ],
+};
