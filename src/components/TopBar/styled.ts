@@ -9,7 +9,7 @@ export const TopBarContainer = styled.div`
 `
 export const LabelSwitch = styled.label`
     position: relative;
-    width: 100px;
+    width: 110px;
     height: 38px;
     display: block;
     cursor: pointer;
@@ -38,18 +38,16 @@ export const Toggle = styled.span<{ $checked: boolean }>`
     background-color: #111111;
     width: 30px;
     height: 30px;
-    transform: translateX(${({ $checked }) => ($checked ? '0' : '60px')});
+    transform: translateX(${({ $checked }) => ($checked ? '0' : '70px')});
     transition: transform 0.2s ease;
 `
 export const LabelText = styled.span`
     display: block;
     color: #fff;
-    font-size: 14px;
-    font-weight: 500;
     user-select: none;
     font-family: Poppins;
     font-size: 18px;
-    font-weight: extraBold;
+    font-weight: 800;
 `
 export const TopInput = styled.input`
     background-color: #444444;
@@ -63,6 +61,7 @@ export const TopInput = styled.input`
     color: #FFF9;
     font-family: Poppins;
     font-size: 18px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 `
 export const SearchIcon = styled.img`
     position: absolute;
@@ -85,5 +84,16 @@ export const CurrentLocation = styled.span`
     position: relative;
     width: 292px;
     height: 62px;
-    display: block;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #FFF9;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 800;
+    gap: 20px;
+`
+export const LocationImg = styled.img`
+    width: 35px;
+    height: 35px;
 `
