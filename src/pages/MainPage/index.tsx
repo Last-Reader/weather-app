@@ -1,5 +1,5 @@
 import TopBar from "@components/TopBar";
-import CurrentTimeCity from "@src/components/CurrentTimeCity";
+import WeatherGridBox from "@src/components/WeatherGridBox";
 import { useState } from "react";
 
 function MainPage () {
@@ -8,7 +8,7 @@ function MainPage () {
     return(
         <>
             <TopBar isDark={isDark} onToggle={setIsDark} />
-            <CurrentTimeCity></CurrentTimeCity>
+            <WeatherGridBox />
         </>
     )
 }

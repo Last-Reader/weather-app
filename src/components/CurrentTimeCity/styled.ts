@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const TimeBlock = styled.span`
     top: 40px;
-    display: block;
-    width: 510px;
+    display: flex;
     height: 330px;
     position: relative;
     background-color: #444444;
