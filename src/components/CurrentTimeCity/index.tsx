@@ -1,9 +1,13 @@
-import { TimeBlock } from "./styled";
+import { CityTitle, TimeBlock } from "./styled";
 
-function CurrentTimeCity () {
+type Props = {
+    city: string,
+}
+
+function CurrentTimeCity ({city}: Props) {
     return (
         <TimeBlock>
-            
+            <CityTitle>{city}</CityTitle>
         </TimeBlock>
     )
     
