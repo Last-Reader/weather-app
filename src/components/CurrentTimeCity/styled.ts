@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TimeBlock = styled.span`
     top: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     height: 330px;
     position: relative;
@@ -19,7 +20,6 @@ export const CityTitle = styled.div`
     font-size: 36px;
 `
 export const WatchTitle = styled.div`
-    margin-top: 53px;
     color: #fff;
     font-family: Poppins;
     font-weight: 700;
