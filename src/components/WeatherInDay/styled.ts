@@ -11,7 +11,7 @@ export const WeatherInDayBlock = styled.span`
     border-radius: 30px;
     box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.5);
 `
-export const CurrentTemperature = styled.div`
+export const CurrentTemperature = styled.p`
     display: flex;
     flex-direction: column;
     font-family: Poppins;
@@ -21,13 +21,13 @@ export const CurrentTemperature = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `
-export const FeelsLikeLabel = styled.div`
+export const FeelsLikeLabel = styled.p`
     color: #999;
     font-family: Poppins;
     font-size: 20px;
     font-weight: 600;
 `
-export const FeelsLikeTemperature = styled.div`
+export const FeelsLikeTemperature = styled.p`
     font-family: Poppins;
     font-size: 32px;
     font-weight: 700;
@@ -63,9 +63,21 @@ export const SunInfo = styled.div`
     flex-direction: column;
     color: #fff;
 `
-export const SunriseLabel = styled.div`
+export const SunriseLabel = styled.p`
     font-size: 20px;
 `
-export const SunRiseTime = styled.div`
+export const SunRiseTime = styled.p`
     font-size: 16px;
+`
+export const DescriptionBlock = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: -20px;
+    align-items: center;
+`
+export const DescriptionLabel = styled.p`
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: -20px;
 `

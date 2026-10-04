@@ -1,14 +1,26 @@
 import type { WeatherType } from "@src/types/types";
-import { CurrentTemperature, FeelsLikeLabel, FeelsLikeRow, FeelsLikeTemperature, SunFlexBox, SunInfo, SunriseLabel, SunRiseTime, WeatherInDayBlock } from "./styled";
+import { CurrentTemperature, DescriptionBlock, DescriptionLabel, FeelsLikeLabel, FeelsLikeRow, FeelsLikeTemperature, SunFlexBox, SunInfo, SunriseLabel, SunRiseTime, WeatherInDayBlock } from "./styled";
 import sunriseWhite from '@assets/sunrise-white.svg'
 import sunsetwhite from '@assets/sunset-white.svg'
+import sunny from '@assets/clear.svg'
+import clouds from '@assets/clouds.svg'
+import rain from '@assets/rain.svg'
 
 type Props = {
     weather: WeatherType;
 }
 
+function getIconDescription(description: string): string {
+  switch (description) {
+    case 'Sunny': return sunny;
+    case 'Cloudy': return clouds;
+    case 'Rain': return rain;
+    default: return rain;
+  }
+}
+
 function WeatherInDay ({weather}: Props) {
-    const {temperature, feelsLike, sunRise, sunSet} = weather;
+    const {temperature, feelsLike, sunRise, sunSet, description} = weather;
 
     return(
         <>
@@ -34,6 +46,10 @@ function WeatherInDay ({weather}: Props) {
                         </SunInfo>
                     </SunFlexBox>
                 </CurrentTemperature>
+                <DescriptionBlock>
+                    <img src={getIconDescription(description)} />
+                    <DescriptionLabel>{description}</DescriptionLabel>
+                </DescriptionBlock>
             </WeatherInDayBlock>
         </>
     )
