@@ -2,7 +2,7 @@ export type Units = 'celsius' | 'fahrenheit';
 
 // Один час в почасовом прогнозе
 export interface HourlyForecastItem {
-  time: string;           // "12:00"
+  time: string;
   temperature: number;
   icon: string;
   windSpeed: number;
@@ -10,8 +10,8 @@ export interface HourlyForecastItem {
 
 // Один день в прогнозе на дни
 export interface DailyForecastItem {
-  dayName: string;        // "Friday"
-  date: string;           // "1 Sep"
+  dayName: string;
+  date: string;
   temperature: number;
   icon: string;
 }

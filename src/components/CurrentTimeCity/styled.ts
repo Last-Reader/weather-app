@@ -5,6 +5,8 @@ export const TimeBlock = styled.span`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 0;
     height: 330px;
     position: relative;
     background-color: #444444;
@@ -12,7 +14,7 @@ export const TimeBlock = styled.span`
     box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.5);
 `
 export const CityTitle = styled.div`
-    margin-top: 53px;
+    margin-top: 33px;
     color: #fff;
     font-family: Poppins;
     font-weight: 700;
@@ -20,6 +22,7 @@ export const CityTitle = styled.div`
     font-size: 36px;
 `
 export const WatchTitle = styled.div`
+    margin-top: 30px;
     color: #fff;
     font-family: Poppins;
     font-weight: 700;
@@ -27,7 +30,7 @@ export const WatchTitle = styled.div`
     font-size: 96px;
 `
 export const DateTitle = styled.div`
-    margin-top: 53px;
+    margin-top: -30px;
     color: #fff;
     font-family: Poppins;
     position: relative;
