@@ -1,10 +1,14 @@
 import type { WeatherType } from "@src/types/types";
-import { CurrentTemperature, DescriptionBlock, DescriptionLabel, FeelsLikeLabel, FeelsLikeRow, FeelsLikeTemperature, SunFlexBox, SunInfo, SunriseLabel, SunRiseTime, WeatherInDayBlock } from "./styled";
+import { AdditionalInfoBlockLeft, AdditionalInfoBlockRight, AdditionalTitle, CurrentTemperature, DescriptionBlock, DescriptionLabel, FeelsLikeLabel, FeelsLikeRow, FeelsLikeTemperature, SunFlexBox, SunInfo, SunriseLabel, SunRiseTime, WeatherInDayBlock } from "./styled";
 import sunriseWhite from '@assets/sunrise-white.svg'
 import sunsetwhite from '@assets/sunset-white.svg'
 import sunny from '@assets/clear.svg'
 import clouds from '@assets/clouds.svg'
 import rain from '@assets/rain.svg'
+import humidityIcon from '@assets/humidity.svg'
+import pressureIcon from '@assets/pressure.svg'
+import windSpeedIcon from '@assets/wind.svg'
+import uvIcon from '@assets/uv.svg'
 
 type Props = {
     weather: WeatherType;
@@ -20,7 +24,7 @@ function getIconDescription(description: string): string {
 }
 
 function WeatherInDay ({weather}: Props) {
-    const {temperature, feelsLike, sunRise, sunSet, description} = weather;
+    const {temperature, feelsLike, sunRise, sunSet, description, humidity, pressure, windSpeed, windDirection} = weather;
 
     return(
         <>
@@ -47,9 +51,25 @@ function WeatherInDay ({weather}: Props) {
                     </SunFlexBox>
                 </CurrentTemperature>
                 <DescriptionBlock>
-                    <img src={getIconDescription(description)} />
+                    <img height='90%' width='90%' src={getIconDescription(description)} />
                     <DescriptionLabel>{description}</DescriptionLabel>
                 </DescriptionBlock>
+                <AdditionalInfoBlockLeft>
+                    <img src={humidityIcon} />
+                    {humidity}%
+                    <AdditionalTitle>Humidity</AdditionalTitle>
+                    <img src={pressureIcon} />
+                    {pressure}hPa
+                    <AdditionalTitle>Pressure</AdditionalTitle>
+                </AdditionalInfoBlockLeft>
+                <AdditionalInfoBlockRight>
+                    <img src={windSpeedIcon} />
+                    {windSpeed}km/h
+                    <AdditionalTitle>Wind Speed</AdditionalTitle>
+                    <img src={uvIcon} />
+                    {windDirection}
+                    <AdditionalTitle>UV</AdditionalTitle>
+                </AdditionalInfoBlockRight>
             </WeatherInDayBlock>
         </>
     )
