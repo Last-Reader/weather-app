@@ -90,16 +90,18 @@ export const AdditionalInfoBlockLeft = styled.div`
     align-items: center;
     justify-content: center;
     padding-left: 20px;
+    padding-top: 20px;
 `
 export const AdditionalTitle = styled.p`
     font-size: 16px;
     font-weight: 500;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-top: 10px;
 `
 export const AdditionalInfoBlockRight = styled.div`
     gap: 1px;
     padding-left: 70px;
+    padding-top: 15px;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -108,5 +110,6 @@ export const AdditionalInfoBlockRight = styled.div`
     color: #fff;
     align-items: center;
 `
-export const AdditionalIcon = styled.img<{additional: string}>`
+export const AdditionalIcon = styled.img`
+    padding-bottom: 15px;
 `

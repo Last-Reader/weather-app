@@ -1,5 +1,5 @@
 import type { WeatherType } from "@src/types/types";
-import { AdditionalInfoBlockLeft, AdditionalInfoBlockRight, AdditionalTitle, CurrentTemperature, DescriptionBlock, DescriptionLabel, FeelsLikeLabel, FeelsLikeRow, FeelsLikeTemperature, SunFlexBox, SunInfo, SunriseLabel, SunRiseTime, WeatherInDayBlock } from "./styled";
+import { AdditionalIcon, AdditionalInfoBlockLeft, AdditionalInfoBlockRight, AdditionalTitle, CurrentTemperature, DescriptionBlock, DescriptionLabel, FeelsLikeLabel, FeelsLikeRow, FeelsLikeTemperature, SunFlexBox, SunInfo, SunriseLabel, SunRiseTime, WeatherInDayBlock } from "./styled";
 import sunriseWhite from '@assets/sunrise-white.svg'
 import sunsetwhite from '@assets/sunset-white.svg'
 import sunny from '@assets/clear.svg'
@@ -55,18 +55,18 @@ function WeatherInDay ({weather}: Props) {
                     <DescriptionLabel>{description}</DescriptionLabel>
                 </DescriptionBlock>
                 <AdditionalInfoBlockLeft>
-                    <img src={humidityIcon} />
+                    <AdditionalIcon src={humidityIcon} />
                     {humidity}%
                     <AdditionalTitle>Humidity</AdditionalTitle>
-                    <img src={pressureIcon} />
+                    <AdditionalIcon src={pressureIcon} />
                     {pressure}hPa
                     <AdditionalTitle>Pressure</AdditionalTitle>
                 </AdditionalInfoBlockLeft>
                 <AdditionalInfoBlockRight>
-                    <img src={windSpeedIcon} />
+                    <AdditionalIcon src={windSpeedIcon} />
                     {windSpeed}km/h
                     <AdditionalTitle>Wind Speed</AdditionalTitle>
-                    <img src={uvIcon} />
+                    <AdditionalIcon src={uvIcon} />
                     {windDirection}
                     <AdditionalTitle>UV</AdditionalTitle>
                 </AdditionalInfoBlockRight>
