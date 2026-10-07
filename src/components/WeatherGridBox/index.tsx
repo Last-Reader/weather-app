@@ -1,9 +1,9 @@
 import type { WeatherType } from "@src/types/types";
 import CurrentTimeCity from "@components/CurrentTimeCity";
-import { FiveDayBlock } from "@components/FiveDaysWeather/styled";
 import { HourlyBlock } from "@components/HourlyWeather/styled";
 import WeatherInDay from "@components/WeatherInDay";
 import { BottomGridBox, TopGridBox } from "./styled";
+import FiveDayWeather from "../FiveDaysWeather";
 
 type Props = {
     weather: WeatherType,
@@ -18,7 +18,7 @@ function WeatherGridBox ({weather}: Props) {
             <WeatherInDay weather={weather}/>
         </TopGridBox>
         <BottomGridBox>
-            <FiveDayBlock />
+            <FiveDayWeather daily={weather.daily}/>
             <HourlyBlock />
         </BottomGridBox>
     </>
