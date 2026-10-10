@@ -6,6 +6,7 @@ export const HourlyBlock = styled.span`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
     height: 366px;
     position: relative;
     background-color: #444;
@@ -18,4 +19,25 @@ export const HourlyBlock = styled.span`
 export const HourlyList = styled.div`
     display: flex;
     flex-direction: row;
+    gap: 20px;
+`
+export const WeatherOfHour = styled.span`
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center;
+    background-color: #373636;
+    color: #fff;
+    border-radius: 40px;
+    padding: 15px 30px;
+`
+export const HourWeatherIcon = styled.img`
+    height: 80px;
+    width: 80px;
+`
+export const WindDirectionIcon = styled.img<{$direction: number}>`
+    height: 55px;
+    width: 55px;
+    transform: rotate(${({$direction}) => $direction}deg);
 `

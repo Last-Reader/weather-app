@@ -10,7 +10,7 @@ type Props = {
 }
 
 function WeatherGridBox ({weather}: Props) {
-    const {city, time, date} = weather;
+    const {city, time, date, hourly} = weather;
     return (
     <>
         <TopGridBox>
@@ -19,7 +19,7 @@ function WeatherGridBox ({weather}: Props) {
         </TopGridBox>
         <BottomGridBox>
             <FiveDayWeather daily={weather.daily}/>
-            <HourlyWeather />
+            <HourlyWeather hourly={hourly}/>
         </BottomGridBox>
     </>
     )

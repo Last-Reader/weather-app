@@ -6,6 +6,7 @@ export interface HourlyForecastItem {
   temperature: number;
   icon: string;
   windSpeed: number;
+  direction: number;
 }
 
 // Один день в прогнозе на дни

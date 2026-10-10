@@ -19,11 +19,11 @@ export const weatherMock: WeatherType = {
   pressure: 997,
   uv: 8,
   hourly: [
-    { time: '12:00', temperature: 26, icon: 'sun', windSpeed: 3 },
-    { time: '15:00', temperature: 27, icon: 'sun', windSpeed: 2 },
-    { time: '18:00', temperature: 27, icon: 'cloudy', windSpeed: 2 },
-    { time: '21:00', temperature: 25, icon: 'cloudy', windSpeed: 1 },
-    { time: '00:00', temperature: 22, icon: 'cloudy', windSpeed: 3 },
+    { time: '12:00', temperature: 26, icon: 'sun', windSpeed: 3, direction: 270 },
+    { time: '15:00', temperature: 27, icon: 'sun', windSpeed: 2, direction: 180 },
+    { time: '18:00', temperature: 27, icon: 'cloudy', windSpeed: 2, direction: 0 },
+    { time: '21:00', temperature: 25, icon: 'cloudy', windSpeed: 1, direction: 90 },
+    { time: '00:00', temperature: 22, icon: 'cloudy', windSpeed: 3, direction: 0 },
   ],
   daily: [
     { dayName: 'Friday', date: '1 Sep', temperature: 20, icon: 'sun' },
