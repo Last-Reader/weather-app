@@ -1,6 +1,6 @@
 import type { DailyForecastItem } from "@myTypes/types";
 import { DayIcon, DayOfFiveDays, FiveDayBlock, FiveDaysColumn, FiveDaysTitle, TempOfDay } from "./styled";
-import { iconFunction } from "@src/constants";
+import { iconFunction } from "@src/script/iconSwitch";
 
 type Props = {
     daily: DailyForecastItem[],

@@ -6,10 +6,11 @@ import FiveDayWeather from "@components/FiveDaysWeather";
 import HourlyWeather from "@components/HourlyWeather";
 
 type Props = {
-    weather: WeatherType,
+    weather: WeatherType | null,
 }
 
 function WeatherGridBox ({weather}: Props) {
+    if (!weather) return <div>Нет данных</div>;
     const {city, time, date, hourly} = weather;
     return (
     <>

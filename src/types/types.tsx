@@ -1,6 +1,5 @@
 export type Units = 'celsius' | 'fahrenheit';
 
-// Один час в почасовом прогнозе
 export interface HourlyForecastItem {
   time: string;
   temperature: number;
@@ -9,7 +8,6 @@ export interface HourlyForecastItem {
   direction: number;
 }
 
-// Один день в прогнозе на дни
 export interface DailyForecastItem {
   dayName: string;
   date: string;
@@ -17,30 +15,64 @@ export interface DailyForecastItem {
   icon: string;
 }
 
-// Текущая погода + прогнозы
 export interface WeatherType {
   country: string;
   city: string;
-  date: string;           // "Thursday, 31 Aug"
-  time: string;           // "09:03"
+  date: string;
+  time: string;
   icon: string;
-  description: string;    // "Sunny"
-  temperature: number;    // текущая
-  feelsLike: number;      // ощущаемая
+  description: string;
+  temperature: number;
+  feelsLike: number;
   maxTemperature: number;
   minTemperature: number;
-  humidity: number;       // %
-  windSpeed: number;      // км/ч
-  windDirection: number;  // градусы 0-360
-  sunRise: string;        // "06:37 AM"
-  sunSet: string;         // "08:37 PM"
-  pressure: number;       // hPa
-  uv: number;             // 0-11
+  humidity: number;
+  windSpeed: number;
+  windDirection: number;
+  sunRise: string;
+  sunSet: string;
+  pressure: number;
+  uv: number;
   hourly: HourlyForecastItem[];
   daily: DailyForecastItem[];
 }
 
-// Пропсы для MainPage (или App)
-export interface Props {
-  weatherProps: WeatherType;
+export type RawWeatherResponse = {
+  current: {
+    time: string;
+    temperature_2m: number;
+    relative_humidity_2m: number;
+    apparent_temperature: number;
+    wind_speed_10m: number;
+    wind_direction_10m: number;
+    weather_code: number;
+    surface_pressure: number;
+  };
+    hourly: {
+    time: string[];
+    temperature_2m: number[];
+    wind_direction_10m: number[];
+    wind_speed_10m: number[];
+    weather_code: number[];
+};
+    daily: {
+    time: string[];
+    weather_code: number[];
+    temperature_2m_max: number[];
+    temperature_2m_min: number[];
+    sunrise: string[];
+    sunset: string[];
+    uv_index_max: number[];
+    };
+};
+
+export type GeoData = {
+    name: string;
+    latitude: number;
+    longitude: number;
+    country: string;
+}
+
+export type GeoDataResult = {
+    results?: GeoData[];
 }

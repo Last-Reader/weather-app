@@ -1,13 +1,22 @@
 import { CurrentLocation, LabelSwitch, LabelText, LocationImg, SearchBox, SearchIcon, SwitchInput, Toggle, TopBarContainer, TopInput, Trace } from "./styled";
 import searchIcon from '@assets/search.svg'
 import locatIcon from '@assets/location.svg'
+import { useState, type KeyboardEvent } from "react";
 
 type Props = {
     isDark: boolean,
-    onToggle: (a: boolean) => void
+    onToggle: (a: boolean) => void,
+    setLocation: (location: string) => void,
 }
 
-function TopBar({isDark, onToggle}: Props) {
+function TopBar({isDark, onToggle, setLocation}: Props) {
+
+    const [input, setInput] = useState('');
+
+    function handleKeyDown(e: KeyboardEvent<HTMLInputElement>){
+        if(e.key === 'Enter') setLocation(input);
+    }
+
     return(
         <>
             <TopBarContainer>
@@ -22,7 +31,11 @@ function TopBar({isDark, onToggle}: Props) {
                 </LabelSwitch>
                 <SearchBox>
                     <SearchIcon src={searchIcon}/>
-                    <TopInput placeholder='Search for your preffered city...'/>
+                    <TopInput placeholder='Search for your preffered city...'
+                    value={input}
+                    onChange={(e) => (setInput(e.target.value))}
+                    onKeyDown={handleKeyDown}
+                    />
                 </SearchBox>
                 <CurrentLocation>
                     <LocationImg src={locatIcon}/>

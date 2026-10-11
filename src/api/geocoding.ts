@@ -1,15 +1,5 @@
-import { fetchURL } from "./fetchFunction";
-
-export type GeoData = {
-    nameCity: string;
-    latitude: number;
-    longitude: number;
-    country: string;
-}
-
-export type GeoDataResult = {
-    result?: GeoData[];
-}
+import type { GeoData, GeoDataResult } from "@myTypes/types";
+import { fetchURL } from "@src/script/fetch";
 
 const BASE_URL = 'https://geocoding-api.open-meteo.com/v1/search';
 

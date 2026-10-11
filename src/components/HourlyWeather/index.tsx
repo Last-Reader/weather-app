@@ -1,6 +1,6 @@
 import type { HourlyForecastItem } from "@src/types/types";
 import { HourlyBlock, HourlyList, HourWeatherIcon, WeatherOfHour, WindDirectionIcon } from "./styled";
-import { iconFunction } from "@src/constants";
+import { iconFunction } from "@src/script/iconSwitch";
 import navigationIcon from "@assets/navigation.svg"
 
 type Props = {
