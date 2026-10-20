@@ -1,28 +1,29 @@
 import styled from "styled-components";
 
-export const WeatherInDayBlock = styled.span`
+export const WeatherInDayBlock = styled.div`
     top: 40px;
     padding: 15px 24px;
     display: flex;
     flex-direction: row;
     height: 330px;
     position: relative;
-    background-color: #444444;
+    background-color: ${({theme}) => theme.blockBackground};
     border-radius: 30px;
-    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 12px 12px 32px #00000080;
+    align-items: center;
 `
-export const CurrentTemperature = styled.p`
+export const CurrentTemperature = styled.div`
     display: flex;
     flex-direction: column;
     font-family: Poppins;
     font-size: 80px;
     font-weight: 700;
-    background: linear-gradient(80deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    background: ${({theme}) => theme.currentTemperatureText};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 `
 export const FeelsLikeLabel = styled.p`
-    color: #999;
+    color: ${({theme}) => theme.textColor};
     font-family: Poppins;
     font-size: 20px;
     font-weight: 600;
@@ -31,7 +32,7 @@ export const FeelsLikeTemperature = styled.p`
     font-family: Poppins;
     font-size: 32px;
     font-weight: 700;
-    color: #999;
+    color: ${({theme}) => theme.textColor};;
 `
 export const FeelsLikeRow = styled.div`
     background: none;
@@ -61,7 +62,7 @@ export const SunInfo = styled.div`
     display: flex;
     font-weight: 600;
     flex-direction: column;
-    color: #fff;
+    color: ${({theme}) => theme.textColor};;
 `
 export const SunriseLabel = styled.p`
     font-size: 20px;
@@ -69,28 +70,42 @@ export const SunriseLabel = styled.p`
 export const SunRiseTime = styled.p`
     font-size: 16px;
 `
+export const SunIcon = styled.img`
+    filter: ${({ theme }) => theme.iconFilter};
+`
 export const DescriptionBlock = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: -20px;
+    margin-left: 20px;
     align-items: center;
+    padding-left: 15px;
+    justify-content: center;
 `
 export const DescriptionLabel = styled.p`
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
-    color: #fff;
+    color: ${({theme}) => theme.textColor};;
     margin-top: -20px;
+    text-align: center;
+    max-width: 270px;
+    min-width: 270px;
 `
-export const AdditionalInfoBlockLeft = styled.div`
-    display: flex;
-    flex-direction: column;
+export const DescriptionIcon = styled.img`
+    height: 90%;
+    width: 90%;
+`
+export const GridAdditionalBlock = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 65px;
     font-size: 20px;
     font-weight: 600;
-    color: #fff;
+    color: ${({theme}) => theme.textColor};
     align-items: center;
     justify-content: center;
     padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
 `
 export const AdditionalTitle = styled.p`
     font-size: 16px;
@@ -98,18 +113,14 @@ export const AdditionalTitle = styled.p`
     padding-bottom: 10px;
     padding-top: 10px;
 `
-export const AdditionalInfoBlockRight = styled.div`
-    gap: 1px;
-    padding-left: 70px;
-    padding-top: 15px;
-    justify-content: center;
+export const AdditionalIcon = styled.img`
+    width: 60px;
+    height: 60px;
+    filter: ${({ theme }) => theme.iconFilter}; 
+`
+export const AdditionalFlexBlock = styled.div`
     display: flex;
     flex-direction: column;
-    font-size: 20px;
-    font-weight: 600;
-    color: #fff;
     align-items: center;
-`
-export const AdditionalIcon = styled.img`
-    padding-bottom: 15px;
+    right: 10px;
 `

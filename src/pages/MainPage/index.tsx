@@ -7,30 +7,42 @@ import { geocoding } from "@src/api/geocoding";
 import { weatherApi } from "@src/api/weatherApi";
 import type { WeatherType } from "@myTypes/types";
 
-function MainPage () {
-    const[isDark, setIsDark] = useState(false);
+type Props = {
+  isDark: boolean;
+  onToggle: (a: boolean) => void;
+};
 
-    const [location, setLocation] = useState('Минск');
+function MainPage ({isDark, onToggle}: Props) {
+
+    const [location, setLocation] = useState('Витебск');
 
     const [weather, setWeather] = useState<WeatherType | null>(null);
 
     useEffect(() => {
-        const loadData = async () => {
-            const geoData = await geocoding(location);
-            if (!geoData) return;
 
-            const weatherData = await weatherApi(geoData);
-            if(!weatherData) return;
-            setWeather(weatherData);
+      const loadData = async () => {
+
+      try {
+        const geoData = await geocoding(location);
+
+        if (!geoData) {
+          return;
         }
-        loadData();
-    }, [location]
 
-    )
+        const weatherData = await weatherApi(geoData);
 
-    return(
+        setWeather(weatherData);
+      } catch (err) {
+        console.error('ОШИБКА:', err);
+      }
+    };
+
+      loadData();
+      }, [location]);
+
+      return(
         <>
-            <TopBar isDark={isDark} onToggle={setIsDark} setLocation={setLocation}/>
+            <TopBar isDark={isDark} onToggle={onToggle} setLocation={setLocation}/>
             {weather ? (
                 <WeatherGridBox weather={weather} />
                 ) : (

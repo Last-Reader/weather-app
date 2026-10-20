@@ -25,10 +25,10 @@ export const Trace = styled.span<{ $checked: boolean }>`
     height: 100%;
     border-radius: 40px;
     position: relative;
-    background-color: #D9D9D9;
     display: block;
-    background-color: ${({ $checked }) => ($checked ? '#4ade80' : '#D9D9D9')};
+    background-color: ${({theme}) => theme.traceBackground};
     transition: background-color 0.2s ease;
+    border: 1px solid ${({theme}) => theme.borderColor};
 `
 export const Toggle = styled.span<{ $checked: boolean }>`
     left: 4px;
@@ -43,14 +43,14 @@ export const Toggle = styled.span<{ $checked: boolean }>`
 `
 export const LabelText = styled.span`
     display: block;
-    color: #fff;
+    color: ${({theme}) => theme.textColor};
     user-select: none;
     font-family: Poppins;
     font-size: 18px;
     font-weight: 800;
 `
 export const TopInput = styled.input`
-    background-color: #444444;
+    background-color: ${({theme}) => theme.blockBackground};
     position: relative;
     width: 800px;
     height: 62px;
@@ -58,10 +58,11 @@ export const TopInput = styled.input`
     border: none;
     outline: none;
     padding-left: 70px;
-    color: #FFF9;
+    color: ${({theme}) => theme.textColor};
     font-family: Poppins;
     font-size: 18px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 12px #0000004d;
+    border: 1px solid ${({theme}) => theme.borderColor};
 `
 export const SearchIcon = styled.img`
     position: absolute;
@@ -79,7 +80,7 @@ export const SearchBox = styled.div`
     height: 62px;
 `
 export const CurrentLocation = styled.span`
-    background-color: #4CBB17;
+    background-color: ${({theme}) => theme.backgroundCurrentLocation};
     border-radius: 40px;
     position: relative;
     width: 292px;

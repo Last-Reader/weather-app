@@ -31,7 +31,7 @@ function TopBar({isDark, onToggle, setLocation}: Props) {
                 </LabelSwitch>
                 <SearchBox>
                     <SearchIcon src={searchIcon}/>
-                    <TopInput placeholder='Search for your preffered city...'
+                    <TopInput placeholder='Введите название города...'
                     value={input}
                     onChange={(e) => (setInput(e.target.value))}
                     onKeyDown={handleKeyDown}

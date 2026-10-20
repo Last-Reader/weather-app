@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const FiveDayBlock = styled.span`
-    padding: 20px 30px;
-    color: #fff;
+    padding: 15px 30px;
+    color: ${({theme}) => theme.textColor};;
     top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 366px;
     position: relative;
-    background-color: #444444;
+    background-color: ${({theme}) => theme.blockBackground};;
     border-radius: 30px;
-    box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 12px 12px 32px #00000080;
     font-size: 20px;
     font-weight: 600;
 `
@@ -22,7 +22,7 @@ export const FiveDaysTitle = styled.p`
 export const DayOfFiveDays = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 45px;
+    gap: 35px;
     align-items: center;
 `
 export const TempOfDay = styled.p`
