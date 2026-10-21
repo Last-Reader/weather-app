@@ -1,3 +1,4 @@
+import { breakpoints } from "@src/styles/breakpoints";
 import styled from "styled-components";
 
 export const WeatherInDayBlock = styled.div`
@@ -9,8 +10,13 @@ export const WeatherInDayBlock = styled.div`
     position: relative;
     background-color: ${({theme}) => theme.blockBackground};
     border-radius: 30px;
-    box-shadow: 12px 12px 32px #00000080;
+    box-shadow: 12px 12px 32px ${({theme}) => theme.shadowColor};
     align-items: center;
+
+    @media(max-width: ${breakpoints.mobile}){
+        flex-direction: column;
+        height: auto;
+    }
 `
 export const CurrentTemperature = styled.div`
     display: flex;
@@ -81,6 +87,10 @@ export const DescriptionBlock = styled.div`
     align-items: center;
     padding-left: 15px;
     justify-content: center;
+
+    @media(max-width: ${breakpoints.mobile}){
+        margin-left: 0;
+    }
 `
 export const DescriptionLabel = styled.p`
     font-size: 28px;

@@ -1,3 +1,4 @@
+import { breakpoints } from "@src/styles/breakpoints";
 import styled from "styled-components";
 
 export const HourlyBlock = styled.div`
@@ -14,13 +15,33 @@ export const HourlyBlock = styled.div`
     font-size: 32px;
     font-weight: 700;
     border-radius: 30px;
-    box-shadow: 12px 12px 32px #00000080;
+    box-shadow: 12px 12px 32px ${({theme}) => theme.shadowColor};
+    min-width: 0;
+
+    @media(max-width: ${breakpoints.mobile}){
+        height: auto;
+        padding: 15px 20px;
+        gap: 15px;
+        text-align: center;
+    }
 `
+
 export const HourlyList = styled.div`
     display: flex;
     flex-direction: row;
     gap: 20px;
+    width: 100%;
+
+    @media(max-width: ${breakpoints.mobile}){
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 5px;
+        
+        &::-webkit-scrollbar { display: none; }
+        scrollbar-width: none;
+    }
 `
+
 export const WeatherOfHour = styled.div`
     display: flex;
     flex-direction: column;
@@ -31,17 +52,35 @@ export const WeatherOfHour = styled.div`
     color: ${({theme}) => theme.textColor};
     border-radius: 40px;
     padding: 15px 30px;
+    flex-shrink: 0;
 
     &:nth-child(n + 4){
         background: ${({theme}) => theme.hourBackgroundNight};
     }
+
+    @media(max-width: ${breakpoints.mobile}){
+        padding: 10px 15px;
+        font-size: 16px;
+    }
 `
+
 export const HourWeatherIcon = styled.img`
     height: 80px;
     width: 80px;
+
+    @media(max-width: ${breakpoints.mobile}){
+        height: 50px;
+        width: 50px;
+    }
 `
+
 export const WindDirectionIcon = styled.img<{$direction: number}>`
     height: 55px;
     width: 55px;
     transform: rotate(${({$direction}) => $direction}deg);
+
+    @media(max-width: ${breakpoints.mobile}){
+        height: 35px;
+        width: 35px;
+    }
 `

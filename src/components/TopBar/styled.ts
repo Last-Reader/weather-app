@@ -1,3 +1,4 @@
+import { breakpoints } from "@src/styles/breakpoints";
 import styled from "styled-components";
 
 export const TopBarContainer = styled.div`
@@ -6,6 +7,10 @@ export const TopBarContainer = styled.div`
     align-items: center;
     gap: 16px;
     width: 100%;
+
+    @media(max-width: ${breakpoints.mobile}){
+        flex-wrap: wrap;
+    }
 `
 export const LabelSwitch = styled.label`
     position: relative;
@@ -29,6 +34,7 @@ export const Trace = styled.span<{ $checked: boolean }>`
     background-color: ${({theme}) => theme.traceBackground};
     transition: background-color 0.2s ease;
     border: 1px solid ${({theme}) => theme.borderColor};
+    padding-right: 110px;
 `
 export const Toggle = styled.span<{ $checked: boolean }>`
     left: 4px;
@@ -52,7 +58,7 @@ export const LabelText = styled.span`
 export const TopInput = styled.input`
     background-color: ${({theme}) => theme.blockBackground};
     position: relative;
-    width: 800px;
+    width: 100%;
     height: 62px;
     border-radius: 40px;
     border: none;
@@ -61,8 +67,9 @@ export const TopInput = styled.input`
     color: ${({theme}) => theme.textColor};
     font-family: Poppins;
     font-size: 18px;
-    box-shadow: 0 0 12px #0000004d;
+    box-shadow: 0 0 12px ${({theme}) => theme.shadowColor};
     border: 1px solid ${({theme}) => theme.borderColor};
+
 `
 export const SearchIcon = styled.img`
     position: absolute;
@@ -76,8 +83,10 @@ export const SearchIcon = styled.img`
 `
 export const SearchBox = styled.div`
     position: relative;
-    width: 803px;
+    max-width: 803px;
+    width: 100%;
     height: 62px;
+    max-width: 90%;
 `
 export const CurrentLocation = styled.span`
     background-color: ${({theme}) => theme.backgroundCurrentLocation};
@@ -88,7 +97,7 @@ export const CurrentLocation = styled.span`
     display: flex;
     align-items: center;
     padding: 20px;
-    color: #FFF9;
+    color: ${({theme}) => theme.currentLocationColor};
     font-family: Poppins;
     font-size: 22px;
     font-weight: 800;

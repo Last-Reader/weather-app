@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "@src/styles/breakpoints";
 
 export const TopGridBox = styled.div`
     display: grid;
@@ -6,6 +7,10 @@ export const TopGridBox = styled.div`
     height: auto;
     width: 100%;
     gap: 35px;
+
+    @media (max-width: ${breakpoints.mobile}){
+        grid-template-columns: minmax(0, 1fr);
+    }
 `
 export const BottomGridBox = styled.div`
     display: grid;
@@ -14,4 +19,7 @@ export const BottomGridBox = styled.div`
     width: 100%;
     gap: 35px;
     margin-top: 40px;
+    @media (max-width: ${breakpoints.mobile}){
+        grid-template-columns: minmax(0, 1fr);
+    }
 `

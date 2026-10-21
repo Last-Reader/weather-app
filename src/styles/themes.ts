@@ -9,6 +9,8 @@ export const darkTheme = {
     backgroundCurrentLocation:` #4CBB17`,
     traceBackground: ` #D9D9D9`,
     borderColor: `transparent`,
+    shadowColor: ` #00000080`,
+    currentLocationColor: ` #fff9`,
 }
 
 export const lightTheme = {
@@ -22,4 +24,6 @@ export const lightTheme = {
     backgroundCurrentLocation:` #4CBB17`,
     traceBackground: ` #D9D9D9`,
     borderColor: ` #000000`,
+    shadowColor: ` #00000080`,
+    currentLocationColor: ` #fff9`,
 }
