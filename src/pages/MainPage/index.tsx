@@ -1,11 +1,11 @@
-import TopBar from "@components/TopBar";
-import WeatherGridBox from "@src/components/WeatherGridBox";
-import { useEffect, useState } from "react";
-import { geocoding } from "@src/api/geocoding";
-import { weatherApi } from "@src/api/weatherApi";
-import type { WeatherType } from "@myTypes/types";
-import { Spinner } from "@components/Spinner";
-import { ErrorBox } from "@src/components/ErrorBox";
+import TopBar from '@components/TopBar';
+import WeatherGridBox from '@src/components/WeatherGridBox';
+import { useEffect, useState } from 'react';
+import { geocoding } from '@src/api/geocoding';
+import { weatherApi } from '@src/api/weatherApi';
+import type { WeatherType } from '@myTypes/types';
+import { Spinner } from '@components/Spinner';
+import { ErrorBox } from '@src/components/ErrorBox';
 
 type Props = {
   isDark: boolean;
@@ -15,7 +15,7 @@ type Props = {
 function MainPage({ isDark, onToggle }: Props) {
   const [location, setLocation] = useState('Витебск');
   const [weather, setWeather] = useState<WeatherType | null>(null);
-  
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,14 +46,12 @@ function MainPage({ isDark, onToggle }: Props) {
   return (
     <>
       <TopBar isDark={isDark} onToggle={onToggle} setLocation={setLocation} />
-      
+
       {isLoading && <Spinner />}
 
-       {!isLoading && error && <ErrorBox message={error} />}
+      {!isLoading && error && <ErrorBox message={error} />}
 
-      {!isLoading && !error && weather && (
-        <WeatherGridBox weather={weather} />
-      )}
+      {!isLoading && !error && weather && <WeatherGridBox weather={weather} />}
     </>
   );
 }

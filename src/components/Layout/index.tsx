@@ -14,10 +14,7 @@ export const Layout = ({ children }: Props) => (
     )}
   >
     <MainBackground>
-      <ContentWrapper>
-        {children}
-      </ContentWrapper>
+      <ContentWrapper>{children}</ContentWrapper>
     </MainBackground>
   </ErrorBoundary>
-  
 );

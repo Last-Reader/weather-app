@@ -48,14 +48,14 @@ export type RawWeatherResponse = {
     weather_code: number;
     surface_pressure: number;
   };
-    hourly: {
+  hourly: {
     time: string[];
     temperature_2m: number[];
     wind_direction_10m: number[];
     wind_speed_10m: number[];
     weather_code: number[];
-};
-    daily: {
+  };
+  daily: {
     time: string[];
     weather_code: number[];
     temperature_2m_max: number[];
@@ -63,16 +63,16 @@ export type RawWeatherResponse = {
     sunrise: string[];
     sunset: string[];
     uv_index_max: number[];
-    };
+  };
 };
 
 export type GeoData = {
-    name: string;
-    latitude: number;
-    longitude: number;
-    country: string;
-}
+  name: string;
+  latitude: number;
+  longitude: number;
+  country: string;
+};
 
 export type GeoDataResult = {
-    results?: GeoData[];
-}
+  results?: GeoData[];
+};

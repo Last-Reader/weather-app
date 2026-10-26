@@ -7,15 +7,15 @@ import { useState } from 'react';
 
 function App() {
   const [isDark, setIsDark] = useState(true);
-  
+
   return (
     <>
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-      <GlobalStyle />
-      <Layout>
-        <MainPage isDark={isDark} onToggle={setIsDark}></MainPage>
-      </Layout>
-    </ThemeProvider>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Layout>
+          <MainPage isDark={isDark} onToggle={setIsDark}></MainPage>
+        </Layout>
+      </ThemeProvider>
     </>
   );
 }
