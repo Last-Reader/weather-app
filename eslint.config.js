@@ -17,7 +17,7 @@ export default tseslint.config(
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      prettier, // Добавляем плагин в список
+      prettier,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
