@@ -11,6 +11,7 @@ export const darkTheme = {
     borderColor: `transparent`,
     shadowColor: ` #00000080`,
     currentLocationColor: ` #fff9`,
+    errorBorder: ` #F88508`,
 }
 
 export const lightTheme = {
@@ -26,4 +27,5 @@ export const lightTheme = {
     borderColor: ` #000000`,
     shadowColor: ` #00000080`,
     currentLocationColor: ` #fff9`,
+    errorBorder: ` #F88508`,
 }
