@@ -8,14 +8,15 @@ export const TopBarContainer = styled.div`
     gap: 16px;
     width: 100%;
 
-    @media(max-width: ${breakpoints.mobile}){
-        flex-wrap: wrap;
+    @media (max-width: ${breakpoints.mobile}){
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
     }
 `
 export const LabelSwitch = styled.label`
     position: relative;
     width: 110px;
-    height: 38px;
     display: block;
     cursor: pointer;
 `
@@ -27,7 +28,7 @@ export const SwitchInput = styled.input`
 `
 export const Trace = styled.span<{ $checked: boolean }>`
     width: 100%;
-    height: 100%;
+    height: 38px;
     border-radius: 40px;
     position: relative;
     display: block;
@@ -69,7 +70,6 @@ export const TopInput = styled.input`
     font-size: 18px;
     box-shadow: 0 0 12px ${({theme}) => theme.shadowColor};
     border: 1px solid ${({theme}) => theme.borderColor};
-
 `
 export const SearchIcon = styled.img`
     position: absolute;
@@ -87,6 +87,17 @@ export const SearchBox = styled.div`
     width: 100%;
     height: 62px;
     max-width: 90%;
+
+    @media (max-width: ${breakpoints.tablet}){
+        flex: 1;
+        max-width: 100%;
+        min-width: 200px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}){
+        width: 100%;
+        order: 0;
+    }
 `
 export const CurrentLocation = styled.span`
     background-color: ${({theme}) => theme.backgroundCurrentLocation};
@@ -102,6 +113,11 @@ export const CurrentLocation = styled.span`
     font-size: 22px;
     font-weight: 800;
     gap: 20px;
+
+    @media (max-width: ${breakpoints.mobile}){
+        width: 100%;
+        justify-content: center;
+    }
 `
 export const LocationImg = styled.img`
     width: 35px;

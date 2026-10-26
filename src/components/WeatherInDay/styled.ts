@@ -13,9 +13,22 @@ export const WeatherInDayBlock = styled.div`
     box-shadow: 12px 12px 32px ${({theme}) => theme.shadowColor};
     align-items: center;
 
-    @media(max-width: ${breakpoints.mobile}){
+    @media (max-width: ${breakpoints.tablet}){
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: 20px;
+        height: auto;
+        padding: 30px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}){
+        display: flex;
         flex-direction: column;
         height: auto;
+        padding: 20px;
+        gap: 20px;
     }
 `
 export const CurrentTemperature = styled.div`
@@ -27,6 +40,16 @@ export const CurrentTemperature = styled.div`
     background: ${({theme}) => theme.currentTemperatureText};
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: ${breakpoints.tablet}){
+        align-items: center;
+        text-align: center;
+    }
+
+    @media (max-width: ${breakpoints.mobile}){
+        align-items: center;
+        text-align: center;
+    }
 `
 export const FeelsLikeLabel = styled.p`
     color: ${({theme}) => theme.textColor};
@@ -83,7 +106,7 @@ export const DescriptionBlock = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: -20px;
-    margin-left: 20px;
+    margin-left: -20px;
     align-items: center;
     padding-left: 15px;
     justify-content: center;
@@ -116,6 +139,19 @@ export const GridAdditionalBlock = styled.div`
     justify-content: center;
     padding-left: 20px;
     padding-top: 10px;
+
+    @media (max-width: ${breakpoints.tablet}){
+        gap: 10px;
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}){
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        width: 100%;
+        justify-items: center;
+    }
 `
 export const AdditionalTitle = styled.p`
     font-size: 16px;
@@ -127,6 +163,11 @@ export const AdditionalIcon = styled.img`
     width: 60px;
     height: 60px;
     filter: ${({ theme }) => theme.iconFilter}; 
+
+    @media (max-width: ${breakpoints.tablet}){
+        width: 40px;
+        height: 40px;
+    }
 `
 export const AdditionalFlexBlock = styled.div`
     display: flex;

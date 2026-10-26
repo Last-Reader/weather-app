@@ -1,10 +1,14 @@
 import type { ReactNode } from 'react';
-import { MainBackground } from './styled';
+import { ContentWrapper, MainBackground } from './styled';
 
 type Props = {
   children: ReactNode;
 };
 
 export const Layout = ({ children }: Props) => (
-  <MainBackground>{children}</MainBackground>
+  <MainBackground>
+    <ContentWrapper>
+      {children}
+    </ContentWrapper>
+  </MainBackground>
 );

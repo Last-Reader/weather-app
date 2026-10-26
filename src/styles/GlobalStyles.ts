@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     margin: 0;
     padding: 0;
+    background: ${({ theme }) => theme.mainBackground};
   }
 
   body {
